@@ -1,183 +1,315 @@
 <!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-	<head>
-		<title>Solid State by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+	<title>Jimmy Vinh — Mechanical Engineering Portfolio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&display=swap');
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+		:root{
+			--bg: #1c2226;
+			--bg-alt: #181d21;
+			--panel: #23292e;
+			--ink: #eef1f2;
+			--muted: #9aa5ab;
+			--accent: #d97a3b;
+			--border: rgba(255,255,255,0.08);
+		}
+		*{ box-sizing: border-box; }
+		html,body{ margin:0; padding:0; }
+		body{
+			background: var(--bg);
+			color: var(--ink);
+			font-family: 'Raleway', sans-serif;
+			font-weight: 300;
+			line-height: 1.7;
+		}
+		a{ color: var(--accent); text-decoration: none; }
+		.inner{ max-width: 900px; margin: 0 auto; padding: 0 32px; }
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">Solid State</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+		/* Header */
+		header#header{
+			position: fixed;
+			top: 0; left: 0; right: 0;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 26px 40px;
+			z-index: 20;
+			background: linear-gradient(to bottom, rgba(24,29,33,0.85), transparent);
+		}
+		header#header h1{
+			font-size: 16px;
+			font-weight: 800;
+			letter-spacing: 0.12em;
+			margin: 0;
+			text-transform: uppercase;
+		}
+		header#header h1 a{ color: var(--ink); }
+		header#header nav a{
+			color: var(--muted);
+			font-size: 13px;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			margin-left: 28px;
+		}
+		header#header nav a:hover{ color: var(--accent); }
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+		/* Banner */
+		#banner{
+			min-height: 78vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			background:
+				radial-gradient(circle at 50% 30%, rgba(217,122,59,0.08), transparent 60%),
+				var(--bg-alt);
+			border-bottom: 1px solid var(--border);
+		}
+		#banner .inner{ padding-top: 40px; }
+		.logo{
+			width: 64px; height: 64px;
+			margin: 0 auto 26px;
+			border: 1px solid var(--accent);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--accent);
+			font-size: 22px;
+			letter-spacing: 0.05em;
+		}
+		#banner h2{
+			font-size: clamp(32px, 6vw, 52px);
+			font-weight: 800;
+			margin: 0 0 14px;
+			letter-spacing: -0.01em;
+		}
+		#banner p{
+			color: var(--muted);
+			font-size: 16px;
+			max-width: 460px;
+			margin: 0 auto;
+		}
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<div class="logo"><span class="icon fa-gem"></span></div>
-							<h2>This is Solid State</h2>
-							<p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
-						</div>
-					</section>
+		/* Spotlight sections */
+		.wrapper{ border-bottom: 1px solid var(--border); }
+		.wrapper.alt{ background: var(--bg-alt); }
+		.spotlight{ padding: 90px 0; }
+		.spotlight .inner{
+			display: flex;
+			align-items: center;
+			gap: 56px;
+		}
+		.spotlight.style2 .inner{ flex-direction: row-reverse; }
+		.spotlight .image{
+			flex: 0 0 300px;
+			height: 210px;
+			border-radius: 4px;
+			border: 1px solid var(--border);
+			background:
+				repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 16px),
+				var(--panel);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--muted);
+			font-size: 12px;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+		.spotlight .content{ flex: 1; }
+		.spotlight .tag{
+			display: inline-block;
+			font-size: 11px;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: var(--accent);
+			border: 1px solid var(--accent);
+			padding: 3px 9px;
+			border-radius: 2px;
+			margin-bottom: 14px;
+		}
+		.spotlight h2{
+			font-size: 28px;
+			font-weight: 600;
+			margin: 0 0 12px;
+		}
+		.spotlight p{
+			color: var(--muted);
+			margin: 0 0 18px;
+			max-width: 480px;
+		}
+		.spotlight a.special{
+			font-size: 13px;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			border-bottom: 1px solid var(--accent);
+			padding-bottom: 2px;
+		}
 
-				<!-- Wrapper -->
-					<section id="wrapper">
+		@media (max-width: 720px){
+			.spotlight .inner, .spotlight.style2 .inner{ flex-direction: column; text-align: center; }
+			.spotlight .image{ width: 100%; flex-basis: auto; }
+			.spotlight p{ margin-left: auto; margin-right: auto; }
+		}
 
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Magna arcu feugiat</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+		/* Features (more to come) */
+		#four{ padding: 90px 0; text-align: center; }
+		#four h2{ font-size: 26px; font-weight: 600; margin: 0 0 14px; }
+		#four > .inner > p{ color: var(--muted); max-width: 480px; margin: 0 auto 40px; }
+		.features{
+			display: flex;
+			justify-content: center;
+			gap: 24px;
+			flex-wrap: wrap;
+		}
+		.features article{
+			width: 200px;
+			padding: 26px 18px;
+			border: 1px dashed var(--border);
+			border-radius: 4px;
+		}
+		.features article h3{
+			font-size: 15px;
+			font-weight: 600;
+			margin: 0 0 8px;
+			color: var(--muted);
+		}
+		.features article p{
+			font-size: 13px;
+			color: var(--muted);
+			margin: 0;
+			opacity: 0.8;
+		}
 
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Tempus adipiscing</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+		/* Footer */
+		#footer{
+			padding: 80px 0 50px;
+			text-align: center;
+			background: var(--bg-alt);
+		}
+		#footer h2{ font-size: 26px; font-weight: 600; margin: 0 0 14px; }
+		#footer p{ color: var(--muted); max-width: 440px; margin: 0 auto 30px; }
+		.contact-links{
+			display: flex;
+			justify-content: center;
+			gap: 26px;
+			flex-wrap: wrap;
+			margin-bottom: 40px;
+		}
+		.contact-links a{
+			color: var(--ink);
+			font-size: 13px;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			border: 1px solid var(--border);
+			padding: 10px 18px;
+			border-radius: 3px;
+		}
+		.contact-links a:hover{ border-color: var(--accent); color: var(--accent); }
+		ul.copyright{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			font-size: 12px;
+			color: var(--muted);
+		}
+	</style>
+</head>
+<body>
 
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Nullam dignissim</h2>
-										<p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-										<a href="#" class="special">Learn more</a>
-									</div>
-								</div>
-							</section>
+	<div id="page-wrapper">
 
-						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Vitae phasellus</h2>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3 class="major">Ante fermentum</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3 class="major">Fusce consequat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
-											<a href="#" class="special">Learn more</a>
-										</article>
-									</section>
-									<ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
-									</ul>
-								</div>
-							</section>
+		<header id="header">
+			<h1><a href="#">Jimmy Vinh</a></h1>
+			<nav>
+				<a href="#projects">Projects</a>
+				<a href="https://github.com/jimuv" target="_blank" rel="noopener">GitHub</a>
+			</nav>
+		</header>
 
-					</section>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<li class="icon solid fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="icon solid fa-phone">(000) 000-0000</li>
-								<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-								<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
-								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
-
+		<section id="banner">
+			<div class="inner">
+				<div class="logo">JV</div>
+				<h2>Jimmy Vinh</h2>
+				<p>Mechanical engineering — builds, prototypes, and works in progress. Portfolio still filling in.</p>
 			</div>
+		</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<section id="wrapper" role="main">
 
-	</body>
+			<section id="projects">
+
+				<section class="wrapper spotlight style1">
+					<div class="inner">
+						<a href="https://github.com/jimuv" target="_blank" rel="noopener" class="image">Image placeholder</a>
+						<div class="content">
+							<span class="tag">In progress</span>
+							<h2>Container 3D Project</h2>
+							<p>Modular 3D-printed container system. Design files, photos, and a full write-up coming soon.</p>
+							<a href="https://github.com/jimuv" target="_blank" rel="noopener" class="special">View on GitHub</a>
+						</div>
+					</div>
+				</section>
+
+				<section class="wrapper alt spotlight style2">
+					<div class="inner">
+						<a href="https://github.com/jimuv" target="_blank" rel="noopener" class="image">Image placeholder</a>
+						<div class="content">
+							<span class="tag">Concept</span>
+							<h2>CRAM-Inspired Project</h2>
+							<p>A compressible, squeeze-through mechanism inspired by CRAM research robotics. Write-up in progress.</p>
+							<a href="https://github.com/jimuv" target="_blank" rel="noopener" class="special">View on GitHub</a>
+						</div>
+					</div>
+				</section>
+
+				<section class="wrapper spotlight style3">
+					<div class="inner">
+						<a href="https://github.com/jimuv" target="_blank" rel="noopener" class="image">Image placeholder</a>
+						<div class="content">
+							<span class="tag">In progress</span>
+							<h2>Maniapad</h2>
+							<p>Custom mechanical macropad built for rhythm-game input. Full build log coming soon.</p>
+							<a href="https://github.com/jimuv" target="_blank" rel="noopener" class="special">View on GitHub</a>
+						</div>
+					</div>
+				</section>
+
+			</section>
+
+			<section id="four" class="wrapper alt">
+				<div class="inner">
+					<h2>More to come</h2>
+					<p>New builds get added here as they're finished.</p>
+					<section class="features">
+						<article>
+							<h3>Reserved</h3>
+							<p>Next build slot</p>
+						</article>
+					</section>
+				</div>
+			</section>
+
+		</section>
+
+		<section id="footer">
+			<div class="inner">
+				<h2>Get in touch</h2>
+				<p>All build files, CAD, and progress logs live on GitHub.</p>
+				<div class="contact-links">
+					<a href="https://github.com/jimuv" target="_blank" rel="noopener">github.com/jimuv</a>
+				</div>
+				<ul class="copyright">
+					<li>&copy; Jimmy Vinh. Portfolio in progress.</li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+</body>
 </html>
